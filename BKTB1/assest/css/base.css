@@ -1,0 +1,267 @@
+* {
+    box-sizing: inherit;
+    margin: 0;
+
+}
+
+html {
+    font-size: 62.5%;
+    font-family: 'Segoe UI', 'roboto', sans-serif;
+    box-sizing: border-box;
+}
+
+:root {
+    --icon-color: #696969;
+    --sidebar-color: #414141;
+    --btn-color-humg: #0896de;
+}
+
+.active {
+    background-color: #e1e1e1;
+}
+
+.heading-1 {
+    display: block;
+    font-size: 2.6rem;
+    font-weight: 800;
+    color: #000;
+}
+
+.heading-2 {
+    display: block;
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: #000;
+}
+
+.heading-3 {
+    display: block;
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #000;
+}
+
+.w-btn {
+    background-color: var(--btn-color-humg);
+    color: #fff;
+    font-size: 1.4rem;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    border: none;
+    text-decoration: none;
+}
+
+.w-btn:hover {
+    background-color: #00aaff;
+    color: #fff;
+}
+
+.w-btn:active {
+    background-color: var(--btn-color-humg);
+}
+
+.frame {
+    border: 2px solid #e2e2e2;
+    border-radius: 20px;
+}
+
+/* navbar */
+.header {
+    background-color: #fff;
+    padding: 5px 30px;
+    border-bottom: 1px solid #ccc;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 2;
+}
+
+.header__navbar-logo {
+
+    align-items: center;
+}
+
+.header__navbar-logo_heading {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin: 0;
+
+}
+
+.header__navbar-search {
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+
+}
+
+.header__navbar-search_content {
+    align-items: center;
+    padding: 0 15px;
+    background-color: #fff;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+}
+
+.header__navbar-search_icon {
+    font-size: 1.6rem;
+    padding: 0 3px;
+    color: #696969;
+    cursor: pointer;
+}
+
+.header__navbar-search_input {
+    border: none;
+    margin-left: 5px;
+    font-size: 1.4rem;
+    width: 400px;
+    padding: 9px 0;
+    border: none;
+    outline: none;
+}
+
+.header__navbar-login {
+    align-items: center;
+    margin-left: 10px;
+}
+
+.header__navbar-login-btn {}
+
+.header__navbar-action {
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.header__navbar-mylearn {
+    font-size: 1.4rem;
+    font-weight: 500;
+    margin-right: 20px;
+}
+
+.header__navbar-notify {
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+.header__navbar-notify-icon {
+    font-size: 1.8rem;
+    padding: 5px;
+    color: #696969;
+}
+
+.header__navbar-notify-icon:hover {
+    color: #000;
+}
+
+.header__navbar-account {}
+
+.header__navbar-account_img {
+    width: 36px;
+    height: 36px;
+    border-radius: 100%;
+    cursor: pointer;
+}
+
+.header__navbar-navbtn {
+    list-style: none;
+    justify-content: flex-start;
+    margin: 0;
+}
+
+.header__navbar-navbtn-item {
+    margin: 0 10px;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.header__navbar-navbtn-item_link {
+    margin: 0;
+    text-decoration: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--sidebar-color);
+    fill: var(--sidebar-color);
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+
+}
+
+.header__navbar-navbtn-item:hover {
+    background-color: #e1e1e1;
+}
+
+.header__navbar-navbtn-item_link:hover {
+    color: #000;
+    fill: #000;
+}
+
+.header__navbar-navbtn-item_icon {
+    font-size: 2.2rem;
+}
+
+.header__navbar-navbtn-item_name {
+    text-align: center;
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+    font-weight: 500;
+}
+
+.content {
+    padding-top: 80px;
+}
+
+.show-course {
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+    cursor: pointer;
+    border: none;
+    font-size: 1.4rem;
+    font-weight: 500;
+    padding: 10px 15px;
+    border-radius: 20px;
+    background-color: #fff;
+    visibility: hidden;
+    opacity: 0;
+    transition: all .3s ease;
+}
+
+.show-course-bgr:after {
+    content: "";
+    background-color: rgba(0, 0, 0, 0.4);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    visibility: hidden;
+    opacity: 0;
+    transition: all .3s ease;
+}
+
+.show-course-bgr:hover:after {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* login */
+
+/* animation */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translate(50%, 5%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(50%, -50%);
+    }
+}
