@@ -1,0 +1,42 @@
+.contain {
+    margin-top: 30px;
+}
+
+.course__about-knowledge {
+    margin-top: 30px;
+}
+
+.course__about-knowledge-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.course__about-knowledge-item {
+    font-size: 1.4rem;
+    fill: var(--btn-color-humg);
+    flex-basis: 50%;
+    margin-top: 10px;
+}
+
+.course__content {
+    margin-top: 30px;
+}
+
+.course__start {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.course__start-avatar {
+    width: 90%;
+    background-image: url(https://files.fullstack.edu.vn/f8-prod/courses/7.png);
+    padding-top: 50.8%;
+    background-size: contain;
+    background-repeat: none;
+    border-radius: 20px;
+    margin-bottom: 20px;
+}
