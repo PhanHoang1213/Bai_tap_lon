@@ -37,3 +37,33 @@
 }
 
 .route__course-name {}
+.route__heading {
+    margin-top: 15px;
+}
+
+.route__content {
+    margin-top: 50px;
+}
+
+.route__content-item {
+    padding: 20px;
+    margin-left: 20px;
+}
+
+.route__content-item-body {
+    height: 100px;
+}
+
+.route__content-item-heading {
+    text-decoration: none;
+}
+
+.route__content-item-desc {
+    font-size: 1.4rem;
+}
+
+.route__content-item-btn {
+    margin-top: 10px;
+}
+
+.route__content-item-show {}
