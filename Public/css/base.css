@@ -87,6 +87,15 @@ html {
     border-radius: 20px;
 }
 
+/* form */
+.form-group.invalid .form-control {
+    border: red 1px solid;
+}
+
+.form-group.invalid .form-message {
+    color: red;
+}
+
 /* navbar */
 .header {
     background-color: #fff;
@@ -229,10 +238,6 @@ html {
     font-size: 1.2rem;
     line-height: 1.6rem;
     font-weight: 500;
-}
-
-.content {
-    padding-top: 80px;
 }
 
 .show-course {

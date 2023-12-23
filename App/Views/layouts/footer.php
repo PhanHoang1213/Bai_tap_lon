@@ -2,7 +2,6 @@
 
 </div>
 </div>
-<script src="js/convertForm.js"></script>
 </body>
 
 </html>

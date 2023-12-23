@@ -10,7 +10,7 @@
 
                     <div class="mb-4">
                         <button id="register" class="btn text-dark btn-info btn-border fs-3 fw-semibold" onclick="onRegister()">Đăng ký</button>
-                        <button id="login" class="btn text-dark btn-border fs-3 fw-boldsemi" onclick="onLogin()">Đăng
+                        <button id="login" class="btn text-dark btn-border fs-3 fw-semibold" onclick="onLogin()">Đăng
                             nhập</button>
                     </div>
                     <div id="register_contain">
@@ -37,7 +37,7 @@
                                 </div>
                             </div>
 
-                            <button type="submit" id="submit-register" class="btn btn-info mt-5 mb-4 fs-3 fw-semibold" style="float: right;" value="register">Đăng ký
+                            <button type="submit" id="submit-register" class="w-btn mt-5 mb-4 fs-3 fw-semibold px-4 py-2" style="float: right;" value="register">Đăng ký
                             </button>
                         </form>
                     </div>
@@ -57,7 +57,7 @@
                                     <span class="form-message"></span>
                                 </div>
                             </div>
-                            <button type="submit" id="submit-login" class="btn btn-info mt-5 mb-4 fs-3 fw-semibold" style="float: right;" value="login">Đăng nhập
+                            <button type="submit" id="submit-login" class="w-btn mt-5 mb-4 fs-3 fw-semibold px-4 py-2 round-pill" style="float: right;" value="login">Đăng nhập
                             </button>
                         </form>
                     </div>

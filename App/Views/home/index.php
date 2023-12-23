@@ -2,9 +2,6 @@
 
 include '/xampp/htdocs/Bai_tap_lon/App/Views/layouts/header.php';
 ?>
-<?php
-include '/xampp/htdocs/Bai_tap_lon/App/Views/layouts/loginForm.php';
-?>
 <div class="content">
     <div class="content__course container">
         <span class="content__course-heading heading-1">Khoá học</span>

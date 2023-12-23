@@ -8,10 +8,10 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <base href="http://localhost:8080/Bai_tap_lon/public/">
-    <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/learning_path.css">
+    <base href="http://localhost:8080/Bai_tap_lon/">
+    <link rel="stylesheet" href="public/css/base.css">
+    <link rel="stylesheet" href="public/css/style.css">
+    <link rel="stylesheet" href="public/css/learning_path.css">
 </head>
 
 <body>
@@ -56,20 +56,31 @@
                     </div>
                 </div>
                 <!-- login-->
-                <div class="header__navbar-login d-flex">
-                    <button type="button" href="/account/login.html" class="header__navbar-login-btn w-btn" data-bs-toggle="modal" data-bs-target="#loginModal">
-                        Đăng nhập
-                    </button>
+                <?php
+                if (!isset($_SESSION['userName'])) {
+                    echo "<div class='header__navbar-login d-flex'>";
+                    echo "<a type='button' href='?controller=register' class='header__navbar-login-btn w-btn' data-bs-toggle='' data-bs-target=''>Đăng nhập </a>";
+                    echo "</div>";
+                }
+                else{
+                    echo "<div class='header__navbar-login d-flex'>";
+                    echo "<a type='button' href='?controller=logout' class='header__navbar-login-btn w-btn' data-bs-toggle='' data-bs-target=''>Đăng xuất </a>";
+                    echo "</div>";
+                }
+                ?>
 
-                </div>
+                <!-- <div class='header__navbar-login d-flex'>
+                    <a type='button' href='?controller=register' class='header__navbar-login-btn w-btn' data-bs-toggle=' data-bs-target='>Đăng nhập </a>
+                    
+                </div> -->
 
                 <!-- logged
-                    <div class="header__navbar-action d-flex d-none">
-                        <div class="header__navbar-notify">
-                            <i class="header__navbar-notify-icon fa-solid fa-bell"></i>
+                    <div class='header__navbar-action d-flex d-none'>
+                        <div class='header__navbar-notify'>
+                            <i class='header__navbar-notify-icon fa-solid fa-bell'></i>
                         </div>
-                        <div class="header__navbar-account">
-                            <img class="header__navbar-account_img" src="" alt="">
+                        <div class='header__navbar-account'>
+                            <img class='header__navbar-account_img' src='' alt=''>
                         </div>
                     </div> -->
 

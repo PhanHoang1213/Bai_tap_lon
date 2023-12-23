@@ -11,9 +11,13 @@ class Database
     {
        $connect = mysqli_connect(self::HOST, self::USERNAME, self::PASSWORD, self::DB_NAME);
         mysqli_set_charset($connect, 'UTF8');
-        if(mysqli_connect_errno()===0){
-            return $connect;
+        if(!$connect){
+            die ('Kết nối thất bại:'. mysqli_connect_error());
         }
-        return false;
+        return $connect;
+    }
+
+    public function close($connect){
+        mysqli_close($connect);
     }
 }
