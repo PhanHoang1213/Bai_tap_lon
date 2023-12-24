@@ -40,6 +40,20 @@ class BaseModel extends Database
         return $data;
     }
 
+    public function selectWhere($table, $select=['*'], $where=['TRUE'], $orderBy = ['id', 'ASC'])
+    {
+        $columns = implode(',', $select);
+        $order = implode(' ', $orderBy);
+        $condition = implode('=',$where);
+        $sql = "SELECT {$columns} FROM {$table} WHERE {$condition} ORDER BY {$order}";
+        $query = $this->_query($sql);
+        $data = [];
+        while ($row = mysqli_fetch_assoc($query)) {
+            array_push($data, $row);
+        }
+        return $data;
+    }
+
     public function selectByValue($table, $column,$value, $select=['*'])
     {
         $columns = implode(',', $select);
