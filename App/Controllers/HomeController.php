@@ -11,7 +11,7 @@ class HomeController extends BaseControlller
 
     public function index()
     {
-        $coursesInfo = $this->homeModel->getCoursesOrder(['courseName', 'courseURL'], ['orderNumber', 'ASC']);
+        $coursesInfo = $this->homeModel->getCoursesOrder(['id','courseName', 'courseImageURL'], ['orderNumber', 'ASC']);
         $this->view('home.index', ['coursesInfo' => $coursesInfo]);
     }
 }

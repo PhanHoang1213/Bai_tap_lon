@@ -16,7 +16,7 @@ class RegisterModel extends BaseModel
 
     public function getByUserName($userName, $select=['*'])
     {
-        return $this->find(self::TABLE_USERS, $userName, $select);
+        return $this->findByUsername(self::TABLE_USERS, $userName, $select);
     }
 
     // public function getUserInfo($userName, $select = ['*'])

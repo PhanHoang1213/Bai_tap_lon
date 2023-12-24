@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="public/css/base.css">
     <link rel="stylesheet" href="public/css/style.css">
     <link rel="stylesheet" href="public/css/learning_path.css">
+    <link rel="stylesheet" href="public/css/course.css">
 </head>
 
 <body>
@@ -61,8 +62,7 @@
                     echo "<div class='header__navbar-login d-flex'>";
                     echo "<a type='button' href='?controller=register' class='header__navbar-login-btn w-btn' data-bs-toggle='' data-bs-target=''>Đăng nhập </a>";
                     echo "</div>";
-                }
-                else{
+                } else {
                     echo "<div class='header__navbar-login d-flex'>";
                     echo "<a type='button' href='?controller=logout' class='header__navbar-login-btn w-btn' data-bs-toggle='' data-bs-target=''>Đăng xuất </a>";
                     echo "</div>";

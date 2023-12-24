@@ -27,7 +27,7 @@ class BaseModel extends Database
         return $data;
     }
 
-    public function selectOrder($table, $select = ['*'], $orderBy=['id', 'ASC'])
+    public function selectOrder($table, $select = ['*'], $orderBy = ['id', 'ASC'])
     {
         $columns = implode(',', $select);
         $order = implode(' ', $orderBy);
@@ -40,10 +40,30 @@ class BaseModel extends Database
         return $data;
     }
 
-    public function find($table, $userName, $select = ['*'])
+    public function selectByValue($table, $column,$value, $select=['*'])
+    {
+        $columns = implode(',', $select);
+        $sql = "SELECT {$columns} FROM {$table} WHERE {$column} = '{$value}'";
+        $query = $this->_query($sql);
+        $data = [];
+        while ($row = mysqli_fetch_assoc($query)) {
+            array_push($data, $row);
+        }
+        return $data;
+    }
+
+    public function findByUsername($table, $userName, $select = ['*'])
     {
         $columns = implode(',', $select);
         $sql = "SELECT {$columns} FROM {$table} WHERE userName = '{$userName}' LIMIT 1";
+        $query = $this->_query($sql);
+        return mysqli_fetch_assoc($query);
+    }
+
+    public function findById($table, $id, $select = ['*'])
+    {
+        $columns = implode(',', $select);
+        $sql = "SELECT {$columns} FROM {$table} WHERE id ='{$id}' LIMIT 1";
         $query = $this->_query($sql);
         return mysqli_fetch_assoc($query);
     }
