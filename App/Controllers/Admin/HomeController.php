@@ -1,8 +1,23 @@
 <?php
 class HomeController extends BaseControlller
 {
+    private $homeModel;
+    public function __construct()
+    {
+        $this->loadModelAdmin('HomeModel');
+        $this->homeModel = new HomeModel;
+    }
+
     public function index()
     {
-        return $this->viewAdmin('Home.index');
+        $countUser = $this->homeModel->countUser();
+        $countCourse = $this->homeModel->countCourse();
+        $countLesson = $this->homeModel->countLesson();
+        return $this->viewAdmin('Home.index',
+        [
+        'countUser'=>$countUser, 
+        'countCourse'=>$countCourse, 
+        'countLesson'=>$countLesson]);
+
     }
 }
