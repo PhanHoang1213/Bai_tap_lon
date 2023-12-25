@@ -12,6 +12,7 @@ class RegisterController extends BaseControlller
 
     public function index()
     {
+
         $this->view('register.index');
     }
 
@@ -34,7 +35,9 @@ class RegisterController extends BaseControlller
                         } else {
                             session_start();
                             $_SESSION['userName'] = $userName;
-                            return $this->view('home.index');
+                            $_SESSION['password'] = $password;
+                            header('location: ?controller=home');
+                            exit;
                         }
                     }
                 }

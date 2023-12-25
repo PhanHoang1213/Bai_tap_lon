@@ -44,9 +44,18 @@ $courseIntro = $courseInfo['courseIntro'];
                     <div class="course__start-avatar" style="background-image: url(<?= $courseImageURL ?>) ;">
                     </div>
                     <?php
-                    $lessonVideoId = $lessons[0]['lessonVideoId'];
+                    if (isset($_SESSION['userName'])) {
+                        if (!empty($lessons)) {
+                            $lessonVideoId = $lessons[0]['lessonVideoId'];
+                            $url = "?controller=lesson&course={$courseId}&id={$lessonVideoId}";
+                        } else {
+                            $url = "?controller=course&course={$courseId}";
+                        }
+                    } else {
+                        $url = "?controller=register";
+                    }
                     ?>
-                    <a href="?controller=lesson&course=<?= $courseId ?>&id=<?= $lessonVideoId ?>" class="w-btn fs-3">Bắt đầu học</a>
+                    <a href="<?= $url ?>" class="w-btn fs-3">Bắt đầu học</a>
                 </div>
             </div>
         </div>

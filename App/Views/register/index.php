@@ -55,7 +55,7 @@
                     <div class="row mt-4">
                         <div class="form-group col">
                             <label class="fs-4 fw-semibold" for="password">Mật khẩu</label>
-                            <input type="password" id="register-password" rules="required|min:6" class="form-control fs-4 rounded-4 p-3" placeholder="Nhập mật khẩu" name="password">
+                            <input type="password" id="register-password" class="form-control fs-4 rounded-4 p-3" placeholder="Nhập mật khẩu" name="password">
                             <span class="form-message"></span>
                         </div>
                         <div class="form-group col">

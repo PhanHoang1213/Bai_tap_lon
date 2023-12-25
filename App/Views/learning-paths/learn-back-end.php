@@ -11,7 +11,7 @@ include '/xampp/htdocs/Bai_tap_lon/App/Views/layouts/header.php';
                 $courseName = $course['courseName'];
                 $courseImageURL = $course['courseImageURL'];
                 $courseId = $course['id'];
-                $courseURL = "?controller=course&id={$courseId}";
+                $courseURL = "?controller=course&course={$courseId}";
             ?>
                 <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-sm-12 px-4 mb-5">
                     <span class="route__item-heading heading-2 mb-1"><?= $count . '. ' . $courseName ?></span>

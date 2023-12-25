@@ -74,6 +74,14 @@ class BaseModel extends Database
         return mysqli_fetch_assoc($query);
     }
 
+    public function findByAdminname($table, $adminName, $select = ['*'])
+    {
+        $columns = implode(',', $select);
+        $sql = "SELECT {$columns} FROM {$table} WHERE adminName = '{$adminName}' LIMIT 1";
+        $query = $this->_query($sql);
+        return mysqli_fetch_assoc($query);
+    }
+
     public function findById($table, $id, $select = ['*'])
     {
         $columns = implode(',', $select);
