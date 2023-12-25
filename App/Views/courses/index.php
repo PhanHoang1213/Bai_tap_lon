@@ -2,6 +2,7 @@
 include '/xampp/htdocs/Bai_tap_lon/App/Views/layouts/header.php';
 ?>
 <?php
+$courseId = $courseInfo['id'];
 $courseName = $courseInfo['courseName'];
 $courseImageURL = $courseInfo['courseImageURL'];
 $courseIntro = $courseInfo['courseIntro'];
@@ -42,7 +43,10 @@ $courseIntro = $courseInfo['courseIntro'];
                 <div class="course__start">
                     <div class="course__start-avatar" style="background-image: url(<?= $courseImageURL ?>) ;">
                     </div>
-                    <button class="w-btn fs-3">Bắt đầu học</button>
+                    <?php
+                    $lessonVideoId = $lessons[0]['lessonVideoId'];
+                    ?>
+                    <a href="?controller=lesson&course=<?= $courseId ?>&id=<?= $lessonVideoId ?>" class="w-btn fs-3">Bắt đầu học</a>
                 </div>
             </div>
         </div>

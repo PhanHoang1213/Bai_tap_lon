@@ -10,9 +10,10 @@ class CourseController extends BaseControlller
 
     public function index()
     {
-        $id = $_GET['id'];
-        $courseInfo = $this->courseModel->getCourseById($id, ['courseName', 'courseImageURL', 'courseIntro']);
-        $knowledgeCourses = $this->courseModel->getKnowledgeCourse('id',$id, ['knowledge']);
-        return $this->view('courses.index', ['courseInfo'=> $courseInfo, 'knowledgeCourses'=>$knowledgeCourses]);
+        $course = $_GET['course'];
+        $courseInfo = $this->courseModel->getCourseById($course, ['id','courseName', 'courseImageURL', 'courseIntro']);
+        $knowledgeCourses = $this->courseModel->getKnowledgeCourse('id',$course, ['knowledge']);
+        $lessons = $this->courseModel->getLessonsInCourse(['*'], ['id',"'{$course}'"]);
+        return $this->view('courses.index', ['courseInfo'=> $courseInfo, 'knowledgeCourses'=>$knowledgeCourses, 'lessons'=>$lessons]);
     }
 }
