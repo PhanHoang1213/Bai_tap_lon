@@ -1,5 +1,5 @@
 <?php
-class HomeController extends BaseControlller
+class HomeController extends BaseController
 {
     private $homeModel;
     public function __construct()

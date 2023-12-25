@@ -1,5 +1,5 @@
 <?php
-class BaseControlller
+class BaseController
 {
     const VIEW_FOLDER_NAME = 'Views';
     const MODEL_FOLDER_NAME = 'Models';

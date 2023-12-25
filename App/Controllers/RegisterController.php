@@ -1,6 +1,6 @@
 <?php
 
-class RegisterController extends BaseControlller
+class RegisterController extends BaseController
 {
     private $registerModel;
 

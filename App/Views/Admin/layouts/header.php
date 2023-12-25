@@ -33,7 +33,7 @@ session_start();
                     Thêm
                 </button>
                 <ul class="dropdown-menu">
-                    <li><a class="dropdown-item fs-4" href="#">Người dùng</a></li>
+                    <li><a class="dropdown-item fs-4" href="?admincontroller=add&action=addUser">Người dùng</a></li>
                     <li><a class="dropdown-item fs-4" href="#">Khoá học</a></li>
                     <li><a class="dropdown-item fs-4" href="#">Bài học</a></li>
                 </ul>

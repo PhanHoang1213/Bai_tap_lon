@@ -89,10 +89,18 @@ class BaseModel extends Database
         $query = $this->_query($sql);
         return mysqli_fetch_assoc($query);
     }
+
     public function count($table)
     {
         $sql = "SELECT COUNT(*) FROM {$table}";
         $query = $this->_query($sql);
         return mysqli_fetch_row($query)[0];
+    }
+
+    public function insertIntoUser($table, $value="'abcde', 'abcde'")
+    {
+        
+        $sql = "INSERT INTO {$table} VALUES ({$value})";
+        return $this->_query($sql);
     }
 }

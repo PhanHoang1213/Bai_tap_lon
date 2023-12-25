@@ -1,6 +1,6 @@
 <?php
 
-class LogoutController extends BaseControlller
+class LogoutController extends BaseController
 {
     public function index()
     {
