@@ -97,10 +97,29 @@ class BaseModel extends Database
         return mysqli_fetch_row($query)[0];
     }
 
-    public function insertIntoUser($table, $value="'abcde', 'abcde'")
+    public function insertInto($table, $value="'abcde', 'abcde'")
     {
         
         $sql = "INSERT INTO {$table} VALUES ({$value})";
         return $this->_query($sql);
     }
+
+    public function deleteById($table, $id)
+    {
+        $sql = "DELETE FROM {$table} WHERE id= '{$id}'";
+        return $this->_query($sql);
+    }
+    
+    public function updateUser($table, $userName, $value=["userName", "password"])
+    {
+        $sql = "UPDATE {$table} SET userName = '{$value[0]}', password = '{$value[1]}' WHERE userName = '{$userName}'";
+        return $this->_query($sql);
+    }
+
+    public function deleteByUserName($table, $userName)
+    {
+        $sql = "DELETE FROM {$table} WHERE userName = '{$userName}'";
+        return $this->_query($sql);
+    }
+
 }

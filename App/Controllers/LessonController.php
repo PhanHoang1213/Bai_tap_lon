@@ -1,5 +1,5 @@
 <?php
-class LessonController extends BaseControlller
+class LessonController extends BaseController
 {
     private $lessonModel;
     public function __construct()

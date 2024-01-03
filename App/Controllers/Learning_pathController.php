@@ -1,6 +1,6 @@
 <?php
 
-class Learning_pathController extends BaseControlller
+class Learning_pathController extends BaseController
 {
     private $learning_pathModel;
 
@@ -17,13 +17,13 @@ class Learning_pathController extends BaseControlller
 
     public function learnBackEnd()
     {
-        $courses = $this->learning_pathModel->getByRoutine(['id','courseName', 'courseImageURL'], ['backend', "'1'"] , ['orderNumber', 'ASC']) ;
-        return $this->view('learning-paths.learn-back-end', ['courses'=>$courses]);
+        $courses = $this->learning_pathModel->getByRoutine(['id', 'courseName', 'courseImageURL'], ['backend', "'1'"], ['orderNumber', 'ASC']);
+        return $this->view('learning-paths.learn-back-end', ['courses' => $courses]);
     }
 
     public function learnFrontEnd()
     {
-        $courses = $this->learning_pathModel->getByRoutine(['id','courseName', 'courseImageURL'], ['frontend', "'1'"] , ['orderNumber', 'ASC']) ;
-        return $this->view('learning-paths.learn-front-end',['courses'=>$courses]);
+        $courses = $this->learning_pathModel->getByRoutine(['id', 'courseName', 'courseImageURL'], ['frontend', "'1'"], ['orderNumber', 'ASC']);
+        return $this->view('learning-paths.learn-front-end', ['courses' => $courses]);
     }
 }
