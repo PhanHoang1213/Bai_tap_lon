@@ -24,14 +24,14 @@ include "./App/Views/Admin/layouts/header.php";
                     <button type="submit" name="addUser" class="w-btn mt-5 mb-4 fs-3 fw-semibold px-4 py-2 round-pill" style="float: right;">Thêm
                     </button>
                     <?php if (isset($message))
-                        echo "<h2>{$message}</h2>";
+                        echo "<h2 class='mt-4  text-warning'>{$message}</h2>";
                     ?>
 
                 </form>
             </div>
         </div>
         <div class="col-9 fs-5">
-            <table class="table table-striped">
+            <table class="table table-striped fs-4">
                 <thead>
                     <tr>
                         <th></th>

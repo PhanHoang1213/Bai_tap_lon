@@ -56,18 +56,18 @@ class UserController extends BaseController
 
     public function editUser()
     {
+        $userName = $_GET['userName'];
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             if (isset($_POST['userName']) && isset($_POST['password'])) {
-                $userName = $_POST['userName'];
+                $userNameUp = $_POST['userName'];
                 $password = $_POST['password'];
-                $this->userModel->update($userName, [$userName, $password]);
+                $this->userModel->update($userName, [$userNameUp, $password]);
                 $users = $this->userModel->getUsers();
-                return $this->viewAdmin('user.index', ['users'=>$users]);
-                
+                return $this->goPage('?admincontroller=user', ['users' => $users]);
+                // return $this->viewAdmin('user.index', ['users' => $users]);
             }
-        } 
-        else {
+        } else {
             $users = $this->userModel->getUsers();
             return $this->viewAdmin('user.edit', ['users' => $users]);
         }
