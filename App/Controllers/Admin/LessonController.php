@@ -14,6 +14,13 @@ class LessonController extends BaseController
         $this->viewAdmin('lesson.index', ['lessons' => $lessons, 'courses' => $courses]);
     }
 
+    public function edit()
+    {   $courses = $this->lessonModel->getCourses();
+        $lessonId = $_GET['lessonId'];
+        $lesson = $this->lessonModel->getLessonById($lessonId);
+        $this->viewAdmin('lesson.edit', ['lesson'=>$lesson, 'courses'=>$courses]);
+    }
+
     public function addLesson()
     {
         $courses = $this->lessonModel->getCourses();
@@ -40,13 +47,38 @@ class LessonController extends BaseController
                     } else {
                         $message = "Bài học đã tồn tại";
                         $lessons = $this->lessonModel->getlessons();
-                        return $this->viewAdmin('lesson.index', ['message' => $message, 'lessons' => $lessons,'courses' => $courses]);
+                        $courses = $this->lessonModel->getCourses();
                     }
                 }
             }
         } else {
             $lessons = $this->lessonModel->getlessons();
-            return $this->viewAdmin('lesson.index', ['lessons' => $lessons,'courses' => $courses]);
+            return $this->viewAdmin('lesson.index', ['lessons' => $lessons]);
         }
+    }
+
+    public function editLesson()
+    {
+        $lessonId = $_GET['lessonId'];
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+            if (isset($_POST['lessonName'])) {
+                $lessonName = $_POST['lessonName'];
+                $lessonVideoId = $_POST['videoId'];
+                $courseId = $_POST['courseId'];
+                $this->lessonModel->updateLesson($lessonId, ["{$lessonName}", "{$lessonVideoId}", "{$courseId}"]);
+                $lessons = $this->lessonModel->getlessons();
+                return $this->viewAdmin('lesson.index',  ['lessons'=>$lessons ]);
+            }
+        }
+    }
+
+    public function deleteLesson()
+    {
+        $lessonId = $_GET['lessonId'];
+        $this->lessonModel->delete($lessonId);
+        $lessons = $this->lessonModel->getLessons();
+        $courses = $this->lessonModel->getCourses();
+        return $this->viewAdmin('lesson.index', ['lessons' => $lessons,'courses' => $courses]);
     }
 }

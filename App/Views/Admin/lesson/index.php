@@ -29,7 +29,7 @@ include "./App/Views/Admin/layouts/header.php";
                                 <?php
                                 foreach ($courses as $course) {
                                 ?>
-                                <option value="<?= $course['id']?>"><?=$course['courseName']?></option>
+                                    <option value="<?= $course['id'] ?>"><?= $course['courseName'] ?></option>
                                 <?php
                                 }
                                 ?>
@@ -47,7 +47,7 @@ include "./App/Views/Admin/layouts/header.php";
             </div>
         </div>
         <div class="col-9">
-            <table class="table table-striped">
+            <table class="table table-striped fs-5">
                 <thead>
                     <tr>
                         <th></th>
@@ -59,21 +59,25 @@ include "./App/Views/Admin/layouts/header.php";
                 </thead>
                 <tbody>
                     <?php
-                    foreach($lessons as $lesson)
-                    {
+                    foreach ($lessons as $lesson) {
                         $lessonId = $lesson['lessonId'];
                         $lessonName = $lesson['lessonName'];
                         $videoId = $lesson['lessonVideoId'];
                         $courseId = $lesson['id'];
+                        $edit = "?admincontroller=lesson&action=edit&lessonId={$lessonId}";
+                        $delete = "?admincontroller=lesson&action=deleteLesson&lessonId={$lessonId}"
                     ?>
-                    <tr>
-                        <td></td>
-                        <td><?=$lessonId?></td>
-                        <td><?=$lessonName?></td>
-                        <td><?=$videoId?></td>
-                        <td><?=$courseId?></td>
-                        
-                    </tr>
+                        <tr>
+                            <td>
+                                <a href="<?= $edit ?>" class="mx-3 text-decoration-none text-dark"><i class="fa-solid fa-pen-to-square text-warning me-1"></i>Sửa</a>
+                                <a href="<?= $delete ?>" class="mx-3 text-decoration-none text-dark"><i class="fa-solid fa-circle-minus text-danger me-1"></i>Xoá</a>
+                            </td>
+                            <td><?= $lessonId ?></td>
+                            <td><?= $lessonName ?></td>
+                            <td><?= $videoId ?></td>
+                            <td><?= $courseId ?></td>
+
+                        </tr>
                     <?php
                     }
                     ?>
