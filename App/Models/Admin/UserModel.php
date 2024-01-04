@@ -12,9 +12,9 @@ class UserModel extends BaseModel
         return $this->select(self::TABLE_USERS, $select);
     }
 
-    public function insertUser($value="'abcde', 'abcde'")
+    public function insertUser($column='',$value="'abcde', 'abcde'")
     {  
-        return $this->insertInto(self::TABLE_USERS, $value);
+        return $this->insertInto(self::TABLE_USERS,$column, $value);
     }
 
     public function update($userName, $value=['userName', 'password'])

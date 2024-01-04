@@ -32,10 +32,10 @@ session_start();
             <a href="?admincontroller=user" class="text border border-top-0 border-bottom-0 round-0 fs-3 p-3 px-4" style="text-decoration:none;" type="button">
                 Người Dùng
             </a>
-            <a href="?admincontroller=home" class="text border border-top-0 border-bottom-0 round-0 fs-3 p-3 px-4" style="text-decoration:none;" type="button">
+            <a href="?admincontroller=course" class="text border border-top-0 border-bottom-0 round-0 fs-3 p-3 px-4" style="text-decoration:none;" type="button">
                 Khoá học
             </a>
-            <a href="?admincontroller=home" class="text border border-top-0 border-bottom-0 round-0 fs-3 p-3 px-4" style="text-decoration:none;" type="button">
+            <a href="?admincontroller=lesson" class="text border border-top-0 border-bottom-0 round-0 fs-3 p-3 px-4" style="text-decoration:none;" type="button">
                 Bài học
             </a>
 

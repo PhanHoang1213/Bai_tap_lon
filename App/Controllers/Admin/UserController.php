@@ -31,7 +31,7 @@ class UserController extends BaseController
                     $password = $_POST['password'];
                     $userLoginInfo = $this->userModel->getByUserName($userName);
                     if (empty($userLoginInfo)) {
-                        $result = $this->userModel->insertUser("'{$userName}', '{$password}'");
+                        $result = $this->userModel->insertUser('',"'{$userName}', '{$password}'");
                         if ($result) {
                             $message = "Thêm thành công";
                             $users = $this->userModel->getUsers();

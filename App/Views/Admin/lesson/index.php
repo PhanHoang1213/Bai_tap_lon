@@ -3,13 +3,13 @@ include "./App/Views/Admin/layouts/header.php";
 ?>
 <div class="p-4">
     <div class="row">
-        <div class="col-6 pe-5">
+        <div class="col-3 pe-5">
             <h2 class="mb-5">Thêm Bài Học</h2>
             <div id="login_contain">
-                <form id="add-form" name="add-form" method="post" action="?admincontroller=add&action=addLesson">
+                <form id="add-form" name="add-form" method="post" action="?admincontroller=lesson&action=addLesson">
                     <div class="row mt-4">
                         <div class="form-group col">
-                            <label class="fs-4 fw-semibold" for="adminName">Tên bài học</label>
+                            <label class="fs-4 fw-semibold" for="">Tên bài học</label>
                             <input type="text" class="form-control fs-4 rounded-4 p-3" placeholder="Tên bài học" name="lessonName">
                             <span class="form-message"></span>
                         </div>
@@ -17,7 +17,7 @@ include "./App/Views/Admin/layouts/header.php";
                     <div class="row mt-4">
                         <div class="form-group col">
                             <label class="fs-4 fw-semibold" for="VideoId">VideoId</label>
-                            <input type="text" class="form-control fs-4 rounded-4 p-3" placeholder="Nhập Video id" name="VideoId">
+                            <input type="text" class="form-control fs-4 rounded-4 p-3" placeholder="Nhập Video id" name="videoId">
                             <span class="form-message"></span>
                         </div>
                     </div>
@@ -37,19 +37,20 @@ include "./App/Views/Admin/layouts/header.php";
                             <span class="form-message"></span>
                         </div>
                     </div>
-                    <button type="submit" name="addUser" class="w-btn mt-5 mb-4 fs-3 fw-semibold px-4 py-2 round-pill" style="float: right;">Thêm
+                    <button type="submit" name="addLesson" class="w-btn mt-5 mb-4 fs-3 fw-semibold px-4 py-2 round-pill" style="float: right;">Thêm
                     </button>
                     <?php if (isset($message))
-                        echo "<h2>{$message}</h2>";
+                        echo "<h2 class='mt-3 text-warning'>{$message}</h2>";
                     ?>
 
                 </form>
             </div>
         </div>
-        <div class="col-6">
+        <div class="col-9">
             <table class="table table-striped">
                 <thead>
                     <tr>
+                        <th></th>
                         <th>lessonID</th>
                         <th>lessonName</th>
                         <th>videoId</th>
@@ -58,7 +59,23 @@ include "./App/Views/Admin/layouts/header.php";
                 </thead>
                 <tbody>
                     <?php
-                    
+                    foreach($lessons as $lesson)
+                    {
+                        $lessonId = $lesson['lessonId'];
+                        $lessonName = $lesson['lessonName'];
+                        $videoId = $lesson['lessonVideoId'];
+                        $courseId = $lesson['id'];
+                    ?>
+                    <tr>
+                        <td></td>
+                        <td><?=$lessonId?></td>
+                        <td><?=$lessonName?></td>
+                        <td><?=$videoId?></td>
+                        <td><?=$courseId?></td>
+                        
+                    </tr>
+                    <?php
+                    }
                     ?>
                 </tbody>
             </table>

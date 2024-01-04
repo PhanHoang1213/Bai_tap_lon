@@ -97,10 +97,10 @@ class BaseModel extends Database
         return mysqli_fetch_row($query)[0];
     }
 
-    public function insertInto($table, $value="'abcde', 'abcde'")
+    public function insertInto($table,$column="", $value="'abcde', 'abcde'")
     {
         
-        $sql = "INSERT INTO {$table} VALUES ({$value})";
+        $sql = "INSERT INTO {$table}({$column}) VALUES ({$value})";
         return $this->_query($sql);
     }
 
