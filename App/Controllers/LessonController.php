@@ -11,7 +11,8 @@ class LessonController extends BaseController
     public function index()
     {
         $course = $_GET['course'];
+        $videoId= $_GET['id'];
         $lessons = $this->lessonModel->getLessonsInCourse(['*'], ['id',"'{$course}'"]);
-        return $this->view('lessons.index', ['lessons'=>$lessons]);
+        return $this->view('lessons.index', ['lessons'=>$lessons, 'videoId'=>$videoId]);
     }
 }

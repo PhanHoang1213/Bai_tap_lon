@@ -48,6 +48,7 @@ class LessonController extends BaseController
                         $message = "Bài học đã tồn tại";
                         $lessons = $this->lessonModel->getlessons();
                         $courses = $this->lessonModel->getCourses();
+                        return $this->viewAdmin('lesson.index', ['message' => $message, 'lessons' => $lessons,'courses' => $courses]);
                     }
                 }
             }
