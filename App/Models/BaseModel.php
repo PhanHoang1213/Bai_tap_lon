@@ -89,6 +89,13 @@ class BaseModel extends Database
         $query = $this->_query($sql);
         return mysqli_fetch_assoc($query);
     }
+    public function findByCourseName($table, $courseName, $select = ['*'])
+    {
+        $columns = implode(',', $select);
+        $sql = "SELECT {$columns} FROM {$table} WHERE  courseName='{$courseName}' LIMIT 1";
+        $query = $this->_query($sql);
+        return mysqli_fetch_assoc($query);
+    }
 
     public function count($table)
     {
