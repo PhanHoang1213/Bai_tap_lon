@@ -89,9 +89,9 @@ include "./App/Views/Admin/layouts/header.php";
                         $delete = "?admincontroller=course&action=deleteCourse&courseId={$courseId}"
                     ?>
                         <tr>
-                            <td style="width: 120px;">
-                                <a href="<?= $edit ?>" class="mx-2 text-decoration-none text-dark"><i class="fa-solid fa-pen-to-square text-warning me-1"></i>Sửa</a>
-                                <a href="<?= $delete ?>" class="mx-2 text-decoration-none text-dark"><i class="fa-solid fa-circle-minus text-danger me-1"></i>Xoá</a>
+                            <td style="width: 140px;">
+                                <a href="<?= $edit ?>" class="mx-3 text-decoration-none text-dark"><i class="fa-solid fa-pen-to-square text-warning me-1"></i>Sửa</a>
+                                <a href="<?= $delete ?>" class="mx-3 text-decoration-none text-dark"><i class="fa-solid fa-circle-minus text-danger me-1"></i>Xoá</a>
                             </td>
                             <td><?= $courseId ?></td>
                             <td><?= $courseName ?></td>

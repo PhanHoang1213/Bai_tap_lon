@@ -14,7 +14,7 @@ include "./App/Views/Admin/layouts/header.php";
             <tbody>
                 <tr class="">
                     <td class="pe-4">lessonName</td>
-                    <td><input type="text" class="form-control fs-4 p-2" name="lessonName" value="<?=$lesson['lessonName']?>"></td>
+                    <td><input type="text" class="form-control fs-4 p-2" name="lessonName" value="<?= $lesson['lessonName'] ?>"></td>
                 </tr>
                 <tr class="">
                     <td class="pe-4">lessonVideoid</td>
@@ -22,16 +22,16 @@ include "./App/Views/Admin/layouts/header.php";
                 </tr>
                 <tr class="">
                     <td class="pe-4">courseId</td>
-                    <td><select class="form-control fs-4 p-3" name="courseId">
-                                <option value="<?=$lesson['id']?>"><?=$lesson['id']?></option>
-                                <?php
-                                foreach ($courses as $course) {
-                                ?>
-                                    <option value="<?= $course['id'] ?>"><?= $course['id'] ?></option>
-                                <?php
-                                }
-                                ?>
-                            </select></td>
+                    <td><select class="form-select fs-4 p-3" name="courseId">
+                            <option value="<?= $lesson['id'] ?>"><?= $lesson['id'] ?></option>
+                            <?php
+                            foreach ($courses as $course) {
+                            ?>
+                                <option value="<?= $course['id'] ?>"><?= $course['id'] ?></option>
+                            <?php
+                            }
+                            ?>
+                        </select></td>
                 </tr>
             </tbody>
         </table>

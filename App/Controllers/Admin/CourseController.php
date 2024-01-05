@@ -14,6 +14,13 @@ class CourseController extends BaseController
         return $this->viewAdmin('course.index', ['courses' => $courses]);
     }
 
+    public function edit()
+    {
+        $courseId = $_GET['courseId'];
+        $course = $this->courseModel->findCourseId($courseId);
+        $this->viewAdmin('course.edit', ['course' => $course]);
+    }
+
     public function addCourse()
     {
         $courses = $this->courseModel->getCoursesOrder();
@@ -59,4 +66,29 @@ class CourseController extends BaseController
         }
     }
 
+    public function editCourse()
+    {
+        $courseId = $_GET['courseId'];
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            if (isset($_POST['courseId'])) {
+                $courseIdUp = $_POST['courseId'];
+                $courseName = $_POST['courseName'];
+                $courseImageURL = $_POST['courseImageURL'];
+                $courseIntro = $_POST['courseIntro'];
+                $frontend = $_POST['frontend'];
+                $backend = $_POST['backend'];
+                $this->courseModel->updateCourse($courseId, ["{$courseIdUp}", "{$courseName}", "{$courseImageURL}", "{$courseIntro}", "{$frontend}", "{$backend}"]);
+                $courses = $this->courseModel->getCoursesOrder();
+                return $this->viewAdmin('course.index',  ['courses' => $courses]);
+            }
+        }
+    }
+
+    public function deleteCourse()
+    {
+        $courseId = $_GET['courseId'];
+        $this->courseModel->delete($courseId);
+        $courses = $this->courseModel->getCoursesOrder();
+        return $this->viewAdmin('course.index', ['courses' => $courses]);
+    }
 }

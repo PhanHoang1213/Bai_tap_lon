@@ -64,8 +64,7 @@ class UserController extends BaseController
                 $password = $_POST['password'];
                 $this->userModel->update($userName, [$userNameUp, $password]);
                 $users = $this->userModel->getUsers();
-                return $this->goPage('?admincontroller=user', ['users' => $users]);
-                // return $this->viewAdmin('user.index', ['users' => $users]);
+                return $this->viewAdmin('user.index', ['users' => $users]);
             }
         } else {
             $users = $this->userModel->getUsers();
